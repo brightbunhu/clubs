@@ -1,0 +1,16 @@
+{% extends 'b/leads_base.html '%}
+
+
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h1>THIS PAGE IS FOR USERS REMOVE AFTER FINALE CODING </h1>
+ {% for listt in lists%}
+    <h1> <a href="/club-info/{{listt.id}}">{{listt.name}}</a> <h1>
+    <br>
+    <hr>
+
+  {%endfor%}
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'users/users_base.html '%}
+
+
+{% block content %}
+<h1>THIS PAGE IS FOR USERS REMOVE AFTER FINALE CODING </h1>
+<form method="get" action="{% url 'search' %}">
+  <input type="text" name="q" placeholder='search' />
+
+  <input type="submit" value="Search">
+</form>
+
+<h2> Lists OF Clubs </h2>
+{%for result in results%}
+  <a href="/clubinfooo/{{listt.id}}"><h1>{{result}}, {{r}}</h1></a>
+{%endfor%}
+ {% for listt in lists%}
+    <h1> <a href="/club-info/{{listt.id}}">{{listt.name}}</a> <h1>
+    <br>
+    <hr>
+
+  {%endfor%}
+
+{% endblock %}

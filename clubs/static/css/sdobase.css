@@ -1,0 +1,42 @@
+/* styles.css */
+
+/* Navigation Menu Styles */
+nav[aria-label="main navigation"] {
+    background-color: #3f14ed;
+    padding: 1em;
+    text-align: center;
+  }
+  
+  nav[aria-label="main navigation"] ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  nav[aria-label="main navigation"] li {
+    margin-right: 20px;
+  }
+  
+  nav[aria-label="main navigation"] a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  nav[aria-label="main navigation"] a:hover {
+    color: #ccc;
+  }
+  
+  /* Footer Styles */
+  footer[role="contentinfo"] {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+    clear: both;
+  }
+  
+  footer[role="contentinfo"] p {
+    margin: 0;
+  }

@@ -1,0 +1,27 @@
+<a href="{% url 'usershome' %}"><h1>LOgin as Student</h1></a>
+<a href="{% url 'home' %}"><h1>Login as SDO</h1></a>
+<a href="{% url 'leadshome' %}"><h1>LOGIN as CLub lead</h1></a>
+
+
+
+<!--  
+  {%if messages%}
+<ul>
+    {% for message in messages  %}
+     <li>   {{ message}} </li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<form method="Post" action="">
+  {% csrf_token %}
+  <label>Username:</label>
+  <input type="text" name="username" placeholder="Enter Username" />
+
+  <label>Password:</label>
+  <input type="" name="password" placeholder="Enter password" />
+
+  <input type="submit" value="Login" />
+</form >
+ -->
+

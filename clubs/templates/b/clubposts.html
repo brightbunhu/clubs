@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+club_detail           
+<ul>
+  {% for clubpost in clubdetail  %}
+    <li>
+      <h2>{{ clubpost.name }}</h2>
+      <h2>{{ clubpost.event_title }}</h2>
+      <p>{{ clubpost.event_description }}</p>
+      <p>{{ clubpost.event_date }}</p>
+      <img src="{{ clubpost.event_picture.url }}" alt="{{ clubpost.event_title}}" height="10" width="100">
+      
+    </li>
+    <hr>
+  {% empty %}
+    <li>No clubs found.</li>
+  {% endfor %}
+</ul>
+
+
+
+  <!--<h1>Club List</h1>
+  <ul>
+
+  
+    {% for clubpost in clubposts %}
+        <li>
+        <h2>{{ clubpost.name }}</h2>
+        <h2>{{ clubpost.event_title }}</h2>
+        <p>{{ clubpost.event_description }}</p>
+        <p>{{ clubpost.event_date }}</p>
+        <p>{{ clubpost.event_picture}}</p>   
+        <img src="{{ event_picture.picture.url }}" alt="{{ clubpost.event_title}}" height="10" width="20"> 
+        <hr>
+        </li>
+    {% empty %}
+        <li>No clubs found.</li>
+    {% endfor %}
+  </ul> -->
+{% endblock %}

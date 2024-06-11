@@ -1,0 +1,26 @@
+{% extends 'sdobase.html' %}
+
+{% block content %}
+  <h1>Club List</h1>
+  <ul>
+
+  
+    {% for lead in leads %}
+        <li>
+        <h2>{{ lead.name }}</h2>
+        <h2>{{ lead.lead_name }}</h2>
+        <h2>{{ lead.lead_title }}</h2>
+        <p>{{ lead.lead_regnumber }}</p>
+        <p>{{ lead.lead_program }}</p>
+        <p>{{ lead.lead_email }}</p>
+        <p>{{ lead.lead_phonenumber }}</p>
+        <img src="{{lead.lead_image.url }}" alt="{{ lead.lead_name }}" height="100" width="100">
+        
+        <!--<img src="{{ club.picture.url }}" alt="{{ club.name }}"> -->
+        </li>
+    {% empty %}
+        <li>No clubs found.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
+

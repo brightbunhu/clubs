@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Club List</h1>
+  <ul>
+
+  
+    {% for register in registers %}
+        <li>
+        <h2>{{ register.name }}</h2>
+        <h2>{{ register.clubmembers_name }}</h2>
+        <p>{{ register.clubmembers_regnumber }}</p>
+        <p>{{ register.clubmembers_program }}</p>
+        <p>{{ register.clubmembers_email }}</p>
+        <p>{{ register.clubmembers_phonenumber }}</p>
+        
+        <!--<img src="{{ club.picture.url }}" alt="{{ club.name }}"> -->
+        </li>
+    {% empty %}
+        <li>No clubs found.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

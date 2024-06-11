@@ -1,0 +1,27 @@
+{% extends 'sdobase.html '%}
+{% load static %}
+
+
+
+
+<!-- Using semantic HTML5 elements -->
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/sdohomee.css' %}">
+<form method="get" action="{% url 'search' %}">
+  <input type="text" name="q" placeholder='search' />
+
+  <input type="submit" value="Search">
+</form>
+  
+    {% for listt in lists %}
+    <div class="card-container">
+      <div class="card">
+        <a href="/club-info/{{ listt.id }}">
+          <h2>{{ listt.name }}</h2>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

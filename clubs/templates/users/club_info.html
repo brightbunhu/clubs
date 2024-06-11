@@ -1,0 +1,78 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/n.css' %}">
+
+<!-- Header -->
+<header>
+  <nav class="navbar">
+    <h1>Club Page</h1>
+  </nav>
+</header>
+
+<!-- Main Content -->
+<div id="club-page">
+  <div class="main-content">
+    <!-- Club Information -->
+    <section class="club-info">
+      <h2>{{ club.name }}</h2>
+      <p>{{ club.descripition }}</p>
+      <img src="{{ club.picture.url }}" alt="{{ club.name }}" class="club-image">
+    </section>
+
+    <!-- Upcoming Events -->
+    <section class="upcoming-events">
+      <h1>Upcoming EVENTS</h1>
+      <hr>
+      <ul class="event-list">
+        {% for event_detail in upcoming %}
+          <li>
+            <h2>{{ event_detail.upcomingevent_title }}</h2>
+            <p>{{ event_detail.upcomingevent_date }} </p>
+            <img src="{{event_detail.upcomingevent_poster.url }}" alt="{{ event_detail.upcomingevent_title }}" class="event-image">
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+
+    <!-- Past Events -->
+    <section class="past-events">
+      <h1>PAST EVENTS</h1>
+      <hr>
+      <ul class="event-list">
+        {%for post in posts%}
+          <li>
+            <h2>{{ post.event_title }}</h2>
+            <p>{{ post.event_description }}</p>
+            <p>{{ post.event_date }}</p>
+            <a href="{{ post.event_picture.url }}">
+              <img src="{{ post.event_picture.url }}" alt="{{ post.event_title }}" class="event-image">
+            </a>
+          </li>
+        {%endfor%}
+      </ul>
+    </section>
+  </div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h1>Club leads</h1>
+    <ul class="lead-list">
+      {% for lead in leads %}
+          <li>
+            <h2>{{ lead.name }}</h2>
+            <p>{{ lead.lead_name }}</p>
+            <p>{{ lead.lead_title }}</p>
+            <p>{{ lead.lead_regnumber }}</p>
+            <p>{{ lead.lead_program }}</p>
+            <p>{{ lead.lead_email }}</p>
+            <p>{{ lead.lead_phonenumber }}</p>
+            <img src="{{lead.lead_image.url }}" alt="{{ lead.lead_name }}" class="lead-image">
+          </li>
+      {%endfor%}
+    </ul>
+  </aside>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2023 Club Page</p>
+</footer>

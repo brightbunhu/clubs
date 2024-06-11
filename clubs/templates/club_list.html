@@ -1,0 +1,24 @@
+{% extends 'sdobase.html '%}
+
+{% block content %}
+  <h1>Club List</h1>
+  <ul>
+  {% for club in clubs %}
+    <li>
+      <form action="{% url 'delete_club' club.id %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Delete</button>
+      </form>
+      <form action="{% url 'update_club' club.id %}" method="get">
+        {% csrf_token %}
+        <button type="submit">Update</button>
+      </form>
+      <h2>{{ club.name }}</h2>
+      <p>{{ club.description }}</p>
+      <img src="{{ club.picture.url }}" alt="{{ club.name }}">
+    </li>
+  {% empty %}
+    <li>No clubs found.</li>
+  {% endfor %}
+  </ul>
+{% endblock %} 

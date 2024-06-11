@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Club List</h1>
+  <ul>
+
+  
+    {% for event_detail in event_details %}
+        <li>
+        <h2>{{ event_detail.upcomingevent_title }}</h2>   
+        <h2>{{ event_detail.upcomingevent_date }} </h2>
+        
+        <img src="{{event_detail.upcomingevent_picture.url }}" alt="{{ event_detail.upcomingevent_title }}" height="10" width="100">
+        
+        </li>
+    {% empty %}
+        <li>No clubs found.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
